@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fast Food Frenzy - POC</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/ui.css">
+  <style>
+    body { position: relative; margin: 0; }
+    /* Start and Game Over screens */
+    #startUI, #gameOverUI {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 100;
+    }
+    #startUI { display: flex; }
+    #gameOverUI { display: none; }
+    button { font-size: 24px; padding: 12px 36px; margin: 10px; cursor: pointer; }
+    h1 { color: white; font-size: 48px; margin-bottom: 40px; text-align: center; }
+  </style>
+</head>
+<body>
+  <!-- Game Canvas (hidden until game starts) -->
+  <canvas id="gameCanvas" width="1920" height="1080" style="display:none;"></canvas>
+
+  <!-- Start Screen -->
+  <div id="startUI">
+    <h1>Welcome to Fast Food Frenzy</h1>
+    <button id="startBtn">Start Game</button>
+  </div>
+
+  <!-- Game Over Screen -->
+  <div id="gameOverUI">
+    <h1 id="winnerMessage"></h1>
+    <button id="playAgainBtn">Play Again</button>
+    <button id="quitBtn">Quit</button>
+  </div>
+
+  <!-- UI Overlay -->
+  <div class="ui-overlay">
+    <!-- Scoreboard (Top Left) -->
+    <div class="scoreboard">
+      <div class="tower-score">
+        <img src="assets\images\tower.png" alt="Tower Icon" style="width:20px;height:20px;vertical-align:middle;">
+        0 - 0
+      </div>
+      <div class="champion-status">
+        <img src="assets\images\burger-bruiser-R.png" alt="Champion">
+        <div class="hp-bar">
+          <div class="hp-fill"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Top Center Notifications -->
+    <div class="top-notifications" id="topNotifications">
+      Notification message here...
+    </div>
+
+    <!-- Bottom Right Movement Pad -->
+    <div class="movement-pad" id="movementPad">
+      <!-- Placeholder: a simple circular pad -->
+    </div>
+
+    <!-- Bottom Left Buttons (Ability & Trash Talk) -->
+    <div class="bottom-left-buttons">
+      <div class="button" id="abilityButton">Ability</div>
+      <div class="button" id="trashTalkButton">Trash</div>
+    </div>
+
+    <!-- Bottom Center Trash Talk Notifications -->
+    <div class="bottom-notifications" id="bottomNotifications">
+      Trash talk message here...
+    </div>
+  </div>
+
+  <!-- Load only main.js as an ES module -->
+  <script src="js/main.js" type="module"></script>
+</body>
+</html>
