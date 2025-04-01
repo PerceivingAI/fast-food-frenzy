@@ -121,7 +121,7 @@
     width: 250px;
     height: 250px;
     border-radius: 50%;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.7);
     overflow: hidden;
     touch-action: none;
     pointer-events: auto;
@@ -136,7 +136,7 @@
     height: 100px;
     margin: -50px 0 0 -50px; /* half of 100 */
     border-radius: 50%;
-    background: rgba(0, 0, 0, 0.7);
+    background: darkgrey;
     transition: transform 0.1s linear;
     pointer-events: none;
 }
