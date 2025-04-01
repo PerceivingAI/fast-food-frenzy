@@ -40,6 +40,9 @@ export function pushNotification(message) {
     if (!towerScoreEl) return;
     const burgerScore = teams.burgerBarn.towerDestroyed || 0;
     const tacoScore = teams.tacoTruck.towerDestroyed || 0;
-    towerScoreEl.textContent = `${burgerScore} - ${tacoScore}`;
+    towerScoreEl.innerHTML = `<img src="assets/images/tower.png" style="width:50px; height:50px; vertical-align:middle;"><span style="margin-left:29px;">${burgerScore} - ${tacoScore}</span>`;
+
+
+
   }
   

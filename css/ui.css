@@ -10,45 +10,51 @@
     z-index: 1000;
   }
   
-  /* Scoreboard (Top Left) */
-  .scoreboard {
+/* Scoreboard (Top Left) */
+.scoreboard {
     position: fixed;
-    top: 10px;
-    left: 10px;
+    top: 60px;
+    left: 110px;
     background: rgba(0, 0, 0, 0.7);
-    padding: 5px 10px;
+    padding: 5px 20px;
     color: white;
     pointer-events: auto;
-  }
-  .scoreboard .tower-score {
-    font-size: 20px;
-    margin-bottom: 5px;
-  }
-  .scoreboard .champion-status {
+    border-radius: 4px;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+.scoreboard .tower-score {
+    font-size: 30px;
+    margin-bottom: 12px;
+    padding-left: 10px;
+}
+.scoreboard .champion-status {
     display: flex;
     align-items: center;
-  }
-  .scoreboard .champion-status img {
-    width: 40px;
-    height: 40px;
-    margin-right: 5px;
-  }
-  .scoreboard .champion-status .hp-bar {
-    width: 100px;  /* Fixed width for visual consistency */
-    height: 10px;
+}
+.scoreboard .champion-status img {
+    width: 60px;
+    height: 60px;
+    margin-right: 15px;
+}
+.scoreboard .champion-status .hp-bar {
+    width: 180px;
+    height: 15px;
     background: red;
     position: relative;
-    overflow: hidden; /* Ensure scaled child is clipped */
-  }
-  
-  .scoreboard .champion-status .hp-bar .hp-fill {
-    width: 100%; /* This remains 100% but will be scaled */
+    overflow: hidden;
+    border-radius: 4px;
+}
+.scoreboard .champion-status .hp-bar .hp-fill {
+    width: 100%;
     height: 100%;
     background: green;
     transform: scaleX(1);
     transform-origin: left;
-    transition: transform 0.1s linear; /* Smooth transitions on update */
-  }
+    transition: transform 0.1s linear;
+    border-radius: 4px;
+}
+
+
   
   
   /* Top Center Notifications Container */
@@ -75,30 +81,30 @@
   /* Add to css/ui.css */
   .movement-pad {
     position: fixed;
-    bottom: 10px;
-    right: 10px;
-    width: 150px;
-    height: 150px;
+    bottom: 150px; /* 10px + 100px up */
+    right: 130px;  /* 10px + 100px left */
+    width: 250px;
+    height: 250px;
     border-radius: 50%;
     background: rgba(0, 0, 0, 0.5);
     overflow: hidden;
-    touch-action: none; /* Prevent browser scrolling */
+    touch-action: none;
     pointer-events: auto;
-  }
+}
+
   
-  .movement-pad .joystick-stick {
+.movement-pad .joystick-stick {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 60px;
-    height: 60px;
-    margin: -30px 0 0 -30px;
+    width: 100px;
+    height: 100px;
+    margin: -50px 0 0 -50px; /* half of 100 */
     border-radius: 50%;
-    background: darkgrey;
+    background: rgba(0, 0, 0, 0.7);
     transition: transform 0.1s linear;
     pointer-events: none;
-  }
-  
+}
   
   /* Bottom Left Buttons (Ability & Trash Talk) */
   .bottom-left-buttons {

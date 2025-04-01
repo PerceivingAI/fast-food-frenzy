@@ -6,26 +6,16 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/ui.css">
   <style>
-    body { position: relative; margin: 0; }
-    /* Start and Game Over screens */
-    #startUI, #gameOverUI {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.8);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      z-index: 100;
-    }
+    body { position: relative; margin: 0; background: #000; }
+    #startUI, #gameOverUI { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: #000; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; z-index: 100; }
     #startUI { display: flex; }
     #gameOverUI { display: none; }
-    button { font-size: 24px; padding: 12px 36px; margin: 10px; cursor: pointer; }
-    h1 { color: white; font-size: 48px; margin-bottom: 40px; text-align: center; }
-  </style>
+    #startUI h1 { margin-top: 400px; color: #ffcc66; font-size: 56px; margin-bottom: 40px; text-align: center; font-family: 'Comic Sans MS', cursive, sans-serif; text-shadow: 2px 2px 0 #663300; }
+    #startUI button { font-size: 24px; padding: 12px 36px; margin: 10px; cursor: pointer; border: 2px solid #ffffff; border-radius: 8px; background: #ffcc66; color: #000; font-family: 'Comic Sans MS', cursive, sans-serif; box-shadow: 2px 2px 0 #cc9933; }
+    #winnerMessage { margin-top: 200px; color: #ffcc66; font-size: 56px; margin-bottom: 40px; text-align: center; font-family: 'Comic Sans MS', cursive, sans-serif; text-shadow: 2px 2px 0 #663300; }
+
+    </style>
+    
 </head>
 <body>
   <!-- Game Canvas (hidden until game starts) -->
@@ -49,15 +39,17 @@
     <!-- Scoreboard (Top Left) -->
     <div class="scoreboard">
       <div class="tower-score">
-        <img src="assets\images\tower.png" alt="Tower Icon" style="width:20px;height:20px;vertical-align:middle;">
-        0 - 0
+        <img src="assets/images/tower.png" alt="Tower Icon" style="width:50px; height:50px; vertical-align:middle;">
+        <span style="margin-left:20px;">0 - 0</span>
       </div>
+    
       <div class="champion-status">
-        <img src="assets\images\burger-bruiser-R.png" alt="Champion">
+        <img src="assets/images/burger-bruiser-R.png" alt="Champion" style="width:70px; height:40px;">
         <div class="hp-bar">
-          <div class="hp-fill"></div>
+            <div class="hp-fill"></div>
         </div>
       </div>
+    
     </div>
 
     <!-- Top Center Notifications -->
@@ -70,11 +62,6 @@
       <!-- Placeholder: a simple circular pad -->
     </div>
 
-    <!-- Bottom Left Buttons (Ability & Trash Talk) -->
-    <div class="bottom-left-buttons">
-      <div class="button" id="abilityButton">Ability</div>
-      <div class="button" id="trashTalkButton">Trash</div>
-    </div>
 
     <!-- Bottom Center Trash Talk Notifications -->
     <div class="bottom-notifications" id="bottomNotifications">
