@@ -44,8 +44,10 @@ function start() {
 
     playAgainBtn.onclick = () => location.reload();
     quitBtn.onclick = () => {
-        gameOverUI.innerHTML = `<h1 style="color:white; font-size:48px;">Thanks for playing!</h1>`;
+        gameOverUI.innerHTML = `<h1 style="color: #ffcc66; font-size: 56px; text-align: center; font-family: 'Comic Sans MS', cursive, sans-serif; text-shadow: 2px 2px 0 #663300; margin-top: 400px;">Thanks for playing!</h1>`;
     };
+    
+    
 
     function initializeGame() {
         // Initialize the virtual joystick for touch input

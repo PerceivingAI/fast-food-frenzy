@@ -57,25 +57,60 @@
 
   
   
-  /* Top Center Notifications Container */
-  .top-notifications {
+.top-notifications {
     position: fixed;
-    top: 10px;
+    top: 30px;
     left: 50%;
     transform: translateX(-50%);
-    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     pointer-events: none;
-  }
-  
-  /* Each Notification */
-  .top-notifications .notification {
+}
+
+.top-notifications .notification {
+    display: inline-block;
     background: rgba(0, 0, 0, 0.7);
     color: white;
-    padding: 5px 10px;
-    margin: 3px 0;
+    padding: 8px 35px; /* was 15px, now +20px */
+    margin: 5px 0;
+    font-size: 24px;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
     opacity: 1;
     transition: opacity 0.5s;
-  }
+    border-radius: 4px;
+    width: auto;
+    max-width: 90%;
+    text-align: center;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+
+
+
+.bottom-notifications {
+    position: fixed;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: inline-block;
+    background: grey;
+    color: white;
+    padding: 15px 30px;
+    font-size: 24px;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    opacity: 0;
+    transition: opacity 0.5s;
+    pointer-events: none;
+    border-radius: 4px;
+    width: auto;
+    max-width: 90%;
+    text-align: center;
+}
+
   
   
   /* Add to css/ui.css */
@@ -141,3 +176,15 @@
     pointer-events: none;
   }
   
+  #gameOverUI button {
+    font-size: 24px;
+    padding: 12px 36px;
+    margin: 10px;
+    cursor: pointer;
+    border: 2px solid #ffffff;
+    border-radius: 8px;
+    background: #ffcc66;
+    color: #000;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    box-shadow: 2px 2px 0 #cc9933;
+}
