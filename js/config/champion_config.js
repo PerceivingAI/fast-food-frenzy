@@ -1,24 +1,22 @@
 export const CHAMPION_CONFIG = {
-    maxHp: 100,
-    damage: 15,
-    attackRange: 100,      // 50 pixels
-    cooldown: 1000,       // milliseconds between auto‑attacks
-    speed: 2.5,           // movement speed (pixels per frame) 1.5
-    respawnDelay: 20000,  // ms before respawn
-    collisionRadius: 24,   // matches the drawn circle radius
+    maxHp: 200,              // Durable enough for duels
+    damage: 20,              // Strong, but not 2-shotting minions
+    attackRange: 80,         // Slightly less to make positioning matter
+    cooldown: 1200,          // Slower attacks (1.2s), more readable fights
+    speed: 2.5,              // Not too fast, allows reaction time
+    respawnDelay: 10000,     // Shorter respawn for faster rounds
+    collisionRadius: 24,     // Keep as is
 
-    // XP needed per level (levels 1→2, 2→3)
     xpNeeded: {
-        1: 100,
-        2: 250,
-        3: 500
+        1: 150,
+        2: 350,
+        3: 600
     },
 
-    // Stat increases on level up
     levelUp: {
-        hp: 30,
+        hp: 40,              // Makes levels impactful
         damage: 5,
-        range: 2,
-        speed: 0.1
+        range: 5,
+        speed: 0.15
     }
 };

@@ -91,14 +91,19 @@ export class Champion {
         if (needed && this.xp >= needed) {
             this.level++;
             this.applyStats();
-            pushNotification(`${this.teamId === 'burgerBarn' ? "Burger" : "Taco"} Champion achieved Level ${this.level}!`, "topNotifications");
-            window.showNotification(`Level ${this.level}! Stats increased`);
+    
+            const statGains = CHAMPION_CONFIG.levelUp;
+            const statMessage = `+${statGains.hp} HP, +${statGains.damage} DMG, +${statGains.range} Range, +${statGains.speed.toFixed(2)} Speed`;
+    
+            pushNotification(`${this.teamId === 'burgerBarn' ? "Burger Bruiser" : "Taco Titan"} achieved Level ${this.level}!`, "topNotifications");
+            window.showNotification(`Level ${this.level}! ${statMessage}`);
         }
     }
 
+
     die() {
         this.alive = false;
-        pushNotification(`${this.teamId === 'burgerBarn' ? "Burger" : "Taco"} Champion was killed!`, "topNotifications");
+        pushNotification(`${this.teamId === 'burgerBarn' ? "Burger Bruiser" : "Taco Titan"} was killed!`, "topNotifications");
         this.respawnTime = Date.now() + CHAMPION_CONFIG.respawnDelay;
     }
 
